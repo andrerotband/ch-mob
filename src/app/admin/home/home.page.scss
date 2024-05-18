@@ -1,0 +1,17 @@
+ion-tab-bar {
+  //  bottom: 60px;
+
+  //  border-start-end-radius: 50px;
+  //  border-start-start-radius: 50px;
+  //  position: relative;
+  --background: var(--ion-color-primary);
+
+  ion-tab-button {
+    --color: var(--ion-color-primary-contrast);
+    --color-selected: var(--ion-color-secondary);
+
+    &.tab-selected::before {
+      background-color: var(--ion-color-light);
+    }
+  }
+}

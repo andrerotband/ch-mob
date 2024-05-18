@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-accordion-group expand="inset">
+    @for (status of statusReservas; track status.key) {
+    <ion-accordion [value]="status.key">
+      <ion-item slot="header">
+        <ion-icon [color]="status.color" slot="start" name="list-circle" size="large" />
+        {{status.key}}
+        <ion-badge slot="end" [color]="status.color">
+          @if(!isLoading){
+          {{ reservationsByStatus[status.key].length }}
+          } @else {
+          <ion-spinner name="lines-sharp-small"></ion-spinner>
+          }
+        </ion-badge>
+      </ion-item>
+      <ion-item slot="content">
+        @if (!isLoading) {
+        @for (item of reservationsByStatus[status.key]; track item.cod_reserva) {
+        <app-reservas-itens [reserva]="item">
+        </app-reservas-itens>
+        }
+        }
+      </ion-item>
+    </ion-accordion>
+    }
+  </ion-accordion-group>
+</ion-content>

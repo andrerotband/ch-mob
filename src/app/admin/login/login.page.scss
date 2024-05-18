@@ -1,0 +1,28 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  form {
+    width: 100%;
+  }
+
+  img {
+    height: 20vh;
+  }
+
+  .social-login ion-button {
+    margin-top: 10px;
+    --border-radius: 4px;
+  }
+
+  .error-message {
+    width: 100%;
+    font-size: larger;
+    font-weight: bolder;
+  }
+
+}

@@ -1,0 +1,25 @@
+<app-header></app-header>
+<ion-content>
+  <div class="content_div">
+    <ion-grid [fixed]="true">
+      <ion-row>
+        @for (item of dashOptions; track item) {
+          <ion-col size="6">
+            @if (item.link) {
+              <ion-item routerDirection="root" [routerLink]="[item.link]" lines="none"
+                detail="false" button="true" class="dashboard-item">
+                <ion-img [src]="item.img" [alt]="item.name"></ion-img>
+                <ion-label>{{item.name}}</ion-label>
+              </ion-item>
+            } @else {
+              <div class="static-item dashboard-item">
+                <ion-img [src]="item.img" [alt]="item.name"></ion-img>
+                <ion-label>{{item.name}}</ion-label>
+              </div>
+            }
+          </ion-col>
+        }
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

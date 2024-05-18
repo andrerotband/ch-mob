@@ -1,0 +1,25 @@
+<ion-content>
+  <ion-list>
+    @for (item of despesas; track $index) {
+    <ion-item>
+      <ion-row>
+        <ion-col size="6">
+          {{$index}} - Data Lanç: {{item.data_lanc | date:'dd-MM-y'}}
+        </ion-col>
+        <ion-col size="6" class="ion-text-right">
+          {{item.valor | currency:'BRL':'symbol':'1.0-0':'pt-BR'}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Data Pgto:{{item.data_pgto | date:'dd-MM-y'}}
+        </ion-col>
+        <ion-col size="6" class="ion-text-right">
+          {{getNomeTipodeDespesas(item.tiposdedespesas_id)}}
+          {{getNomeEquipes(item.equipes_id)}}
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-content fullscreen="yes" class="ion-padding">
+  <div class="login-form">
+    <ion-img src="../../../assets/logo.png" alt="Copa Hospeda" />
+
+    <form [formGroup]="loginForm">
+      <ion-input fill="solid" name=" email" type="email" required="true" aria-label="Email" label="Email"
+        inputmode="email" autocomplete="email" labelPlacement="floating" formControlName="email"
+        errorText="Email inválido!"></ion-input>
+      <ion-input fill="solid" name="password" type="password" required="true" aria-label="Senha" label="Senha"
+        formControlName="password" autocomplete="current-password" labelPlacement="floating"
+        errorText="Senha deve ter no mínimo 5 caracteres"></ion-input>
+
+      <div class="social-login">
+        <ion-button type="button" expand="block" color="tertiary" (click)="trySignIn('email')">Login</ion-button>
+        <ion-button type="button" expand="block" color="primary" (click)="trySignIn('Google')">
+          Login com Google
+          <ion-icon name="logo-google" slot="start"></ion-icon>
+        </ion-button>
+        <ion-button type="button" expand="block" color="dark" (click)="trySignIn('GitHub')">
+          Login com GitHub
+          <ion-icon name="logo-github" slot="start"></ion-icon>
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

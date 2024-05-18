@@ -1,0 +1,21 @@
+ion-card {
+  //  background-color: var(--ion-color-white);
+  border-radius: 10px;
+}
+
+ion-card-title {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.status-confirmed {
+  border-left: solid 8px var(--ion-color-success);
+}
+
+.status-in-progress {
+  border-left: solid 8px var(--ion-color-warning);
+}
+
+.card-summary {
+  border-left: solid 8px var(--ion-color-medium);
+}

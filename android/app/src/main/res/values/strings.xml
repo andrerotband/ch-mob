@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Copa Hospeda</string>
+    <string name="title_activity_main">Copa Hospeda</string>
+    <string name="package_name">app.web.copahospeda</string>
+    <string name="custom_url_scheme">app.web.copahospeda</string>
+</resources>

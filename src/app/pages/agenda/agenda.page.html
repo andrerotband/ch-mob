@@ -1,0 +1,42 @@
+<ion-content color="light">
+  @for (item of agenda$ | async; track item.id) {
+  <ion-card [ngClass]="{'status-confirmed':item.status==='Confirmada',
+    'status-in-progress': item.status==='Em Andamento'}"
+    href="https://www.airbnb.com.br/hosting/reservations?confirmationCode={{item.cod_reserva}}" target="_blank">
+    <ion-card-header>
+      <ion-card-title>
+        @if (item.status==='Em Andamento') { {{item.status}} }
+        @else { Chegando em {{calcDiffDateToday(item.checkin)}} dia(s) }
+        - {{item.cod_reserva}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{item.checkin | date:'dd'}} a {{item.checkout | date:'dd'}} de
+        {{item.checkout | date:'MMM':'':'pt-BR' | titlecase}} - ( {{getNroDiasReserva(item)}} diárias )
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Valor: {{item.valor_noites | currency:'BRL':'symbol':'1.0-0':'pt-BR'}} -
+      ( Média {{getMediaTotalNroDias(item) | currency: 'BRL':'symbol':'1.0-0':'pt-BR'}} / dia )
+    </ion-card-content>
+  </ion-card>
+  }
+  <ion-card class="card-summary">
+    <ion-card-header>
+      <ion-card-title>Sumário</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        Valor Total: {{summary.totalBruto | currency: 'BRL':'symbol': '1.0-0': 'pt-BR'}}
+      </ion-row>
+      <ion-row>
+        Média de Diárias: {{summary.avgDias | number:'1.0-0'}} dias
+      </ion-row>
+      <ion-row>
+        Média por Diária: {{summary.avgTotalDias | currency: 'BRL':'symbol': '1.0-0': 'pt-BR'}}
+      </ion-row>
+      <ion-row>
+        Média por Reserva: {{summary.totalBruto/summary.count | currency: 'BRL':'symbol':'1.0-0':'pt-BR'}}
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

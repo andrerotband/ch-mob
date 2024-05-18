@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "copahospeda": {
+      "hosting": {
+        "app": [
+          "copahospeda"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "copahospeda"
+  }
+}

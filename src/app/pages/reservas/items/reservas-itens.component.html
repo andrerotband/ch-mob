@@ -1,0 +1,39 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <ion-item href="https://www.airbnb.com.br/hosting/reservations?confirmationCode={{reserva.cod_reserva}}"
+        target="_blank">
+        Reserva: {{reserva.cod_reserva}}
+      </ion-item>
+    </ion-card-title>
+    <ion-card-subtitle>
+      {{reserva.checkin | date:'dd'}} a
+      {{reserva.checkout | date:'dd'}} de
+      {{reserva.checkout | date:'MMM':'':'pt-BR' | titlecase}} -
+      ({{reservasService.calcNroDiasReserva(reserva)}} diárias)
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-row>
+    <ion-col><ion-icon name="enter-outline" aria-label="Check-in" aria-hidden="true" />
+      {{reserva.checkin| date:'dd-MM-y'}}
+    </ion-col>
+    <ion-col class="ion-text-right">
+      {{reserva.valor_noites| currency:'BRL':'symbol':'1.0-0':'pt-BR'}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-icon name="exit-outline" aria-label="Check-out" aria-hidden="true" />
+      {{reserva.checkout | date:'dd-MM-y'}}
+    </ion-col>
+    <ion-col class="ion-text-right">
+      Nro Dias: {{reservasService.calcNroDiasReserva(reserva)}}
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="ion-text-center">
+      <strong>Média:
+        {{reserva.valor_noites/reservasService.calcNroDiasReserva(reserva)| currency: 'BRL':'symbol-narrow': '1.0-0': 'pt-BR'}}
+        por
+        dia</strong>
+    </ion-col>
+  </ion-row>

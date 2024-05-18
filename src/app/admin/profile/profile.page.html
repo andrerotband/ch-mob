@@ -1,0 +1,60 @@
+<ion-content class="ion-padding">
+  <div class="profile-form">
+    <form [formGroup]="profileForm">
+      <ion-item class="image">
+        <ion-avatar (click)="changeImage()">
+          @if (user?.photoURL) {
+          <img [src]="user?.photoURL" />
+          } @else {
+          <div class="fallback"></div>
+          }
+        </ion-avatar>
+      </ion-item>
+      <ion-item>
+        <ion-input fill="solid" label="Email" labelPlacement="floating" name="email" type="email"
+          formControlName="email" />
+        <ion-item>Email Verificado: {{user?.emailVerified? 'Sim': 'Não'}}</ion-item>
+      </ion-item>
+
+      <ion-item>
+        <ion-input fill="solid" label="Nome" labelPlacement="floating" name="displayName" type="text"
+          formControlName="displayName" />
+      </ion-item>
+
+      <ion-item>
+        <ion-input fill="solid" label="Telefone" labelPlacement="floating" name="phoneNumber" type="tel"
+          formControlName="phoneNumber" />
+      </ion-item>
+      <ion-button expand="block" (click)="tryUpdate()">Atualizar</ion-button>
+      <ion-button expand="block" (click)="authEmail()">Autenticar Email</ion-button>
+    </form>
+  </div>
+</ion-content>
+<!--
+{
+"uid": "Z47m78xYZxPYbUDi4gQNmRLIJai1",
+"email": "andre@ch.com",
+"emailVerified": false,
+"isAnonymous": false,
+"providerData": [
+{
+"providerId": "password",
+"uid": "andre@ch.com",
+"displayName": null,
+"email": "andre@ch.com",
+"phoneNumber": null,
+"photoURL": null
+}
+],
+"stsTokenManager": {
+"refreshToken":
+"AMf-vBymi5toc1B3FOmWsCMwlimOL6SsSuFh5KmLFEzEZf2BoQMyU2MfR8oms1EiNm0xyxN_SYhnRONsxi1hnQutwT-RP7TzarIMqxSZdVm_E8cKK7UwvSVVG7-B_9tljA20gvLBW2yWy_Z-xY9oDsjVzhqi8Cs5TNU26YxrByyadkbmzpWt6LrZPOn6MMibQi1O7NpPV_Go",
+"accessToken":
+"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQxNjg5NDE1ZWMyM2EzMzdlMmJiYWE1ZTNlNjhiNjZkYzk5MzY4ODQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY29wYWhvc3BlZGEiLCJhdWQiOiJjb3BhaG9zcGVkYSIsImF1dGhfdGltZSI6MTcwNDU3MzIxNCwidXNlcl9pZCI6Ilo0N203OHhZWnhQWWJVRGk0Z1FObVJMSUphaTEiLCJzdWIiOiJaNDdtNzh4WVp4UFliVURpNGdRTm1STElKYWkxIiwiaWF0IjoxNzA0NTczMjE0LCJleHAiOjE3MDQ1NzY4MTQsImVtYWlsIjoiYW5kcmVAY2guY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFuZHJlQGNoLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.Le3N7llMdqFLWJJJYojWOjCtFjfQwvfv14wEAz1ofK3l4pN-GkKu0Lg5BRb6J3x8u1ex4IJ6ymiXnOxM4pr6c5SWG8eNhcktWo-VcQ58d5A8IQOHqBdknW37VLx0W7wImDL6ciHXoZKDs0zqwlLXjiVFeS-KmvIke983rJtlkaa-pV0duXgFPnq1gVI0kKbEBuA5ykVmOIj13WLRkk_mJrxvb6l5zP3XqMIKU8h4vcgfF3M6uSMbqPglQw5CWpmhUpsAb3wctT8zXTyyUds4xmszg7vS9z-cZX42NCxsE0ulB09O7IyTk-yRsyzWNSXO64XVCdb_Ge_C7eLCabgXJQ",
+"expirationTime": 1704576813047
+},
+"createdAt": "1703563778142",
+"lastLoginAt": "1704573214868",
+"apiKey": "AIzaSyDXR7mb5iqY8xfOZ-H_o-cBbi1rUR3r6Bg",
+"appName": "[DEFAULT]"
+} -->

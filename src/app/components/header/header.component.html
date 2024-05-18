@@ -1,0 +1,10 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons collapse="true" slot="end">
+      <ion-icon name="sunny-outline" title="Light Mode" aria-label="Light Mode"></ion-icon>
+      <ion-toggle color="light" [checked]="darkMode" aria-label="Dark Mode" (ionChange)="toggleDarkMode()"></ion-toggle>
+      <ion-icon name="moon-outline" title="Dark Mode" aria-label="Dark Mode"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

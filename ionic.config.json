@@ -1,0 +1,7 @@
+{
+  "name": "ch-mob",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

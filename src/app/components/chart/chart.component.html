@@ -1,0 +1,15 @@
+<canvas #chartComponent baseChart class="chart" [data]="chartData" [options]="chartOptions" [type]="chartType"
+  [plugins]="chartPlugins">
+</canvas>
+<div class="button-change">
+  <ion-button color="tertiary" (click)="changeChartType()" aria-label="Tipo de Gráfico">
+    Barra - Linha
+  </ion-button>
+</div>
+<div class="button-row">
+  @for (cbutton of chartButtons; track $index){
+  <ion-button color="tertiary" (click)="cbutton.fn()">{{cbutton.name}}</ion-button>
+  }
+</div>
+
+<!-- (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" aria-label="Your Chart Description"> -->

@@ -1,0 +1,24 @@
+<ion-menu #mainMenu contentId="main-content" type="overlay">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    @for (item of appPages; track $index) {
+    <ion-menu-toggle>
+      @if(item.children) {
+      @for (sub of item.children; track sub.url) {
+      <app-submenu [item]="sub"></app-submenu>
+      }
+      } @else if (item.title) {
+      <app-submenu [item]="item"></app-submenu>
+      }
+    </ion-menu-toggle>
+    }
+    <hr />
+    @if (userLogged) {
+    <ion-item class="ion-justify-content-center">Usuário: {{userLogged}}</ion-item>
+    }
+  </ion-content>
+</ion-menu>

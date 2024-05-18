@@ -1,0 +1,61 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.autoIndent": "advanced",
+  "editor.wordWrapColumn": 100,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.insertSpaces": true,
+  "editor.formatOnType": true,
+  "editor.inlayHints.enabled": "on",
+  "editor.detectIndentation": true,
+  "editor.largeFileOptimizations": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.renderWhitespace": "all",
+  "editor.comments.ignoreEmptyLines": false,
+  "editor.minimap.enabled": false,
+  "editor.suggest.showStatusBar": true,
+  "editor.tabSize": 2,
+  "eslint.run": "onType",
+  "eslint.useESLintClass": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.semicolons": "remove",
+  "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceAfterConstructor": true,
+  "typescript.format.semicolons": "remove",
+  "prettier.bracketSameLine": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "css.lint.duplicateProperties": "warning",
+  "css.styleSheets": [
+    "node_modules/bootstrap/dist/css/bootstrap.css",
+    "src/**/*.scss"
+  ],
+  "html.format.indentInnerHtml": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
+  "typescript.implementationsCodeLens.enabled": true,
+    "typescript.preferences.autoImportFileExcludePatterns": [
+    "@ionic/angular/common",
+    "@ionic/angular"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
+}

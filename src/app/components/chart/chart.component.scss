@@ -1,0 +1,11 @@
+.button-change {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--ion-color-tertiary);
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-around;
+}
