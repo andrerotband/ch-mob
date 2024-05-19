@@ -10,8 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDXR7mb5iqY8xfOZ-H_o-cBbi1rUR3r6Bg"/>
-
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
             android:name=".MainActivity"
